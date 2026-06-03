@@ -1,0 +1,41 @@
+city,name,type,price_per_night_inr,rating,area,description
+Goa,Zostel Goa (Calangute),Hostel,600,4.2,Calangute,Budget backpacker hostel with dorms and private rooms near Calangute Beach.
+Goa,OYO Baga Comfort Inn,Budget Hotel,1200,3.8,Baga,Affordable budget hotel 5 minutes from Baga Beach with AC rooms.
+Goa,Treebo Trend Morjim,Mid-Range,2500,4.1,Morjim,Mid-range hotel near Morjim Beach with pool and restaurant.
+Goa,Taj Fort Aguada Resort,Luxury,12000,4.8,Sinquerim,5-star luxury resort within a 16th-century Portuguese fort with private beach and infinity pool.
+Delhi,Moustache Hostel Delhi,Hostel,500,4.3,Paharganj,Popular backpacker hostel near New Delhi Railway Station with rooftop cafe.
+Delhi,Hotel Amax Inn,Budget Hotel,1500,3.7,Karol Bagh,"Budget hotel in Karol Bagh shopping hub with AC, WiFi, and room service."
+Delhi,The Park New Delhi,Mid-Range,5000,4.3,Connaught Place,"Stylish mid-range hotel in CP with rooftop bar, spa, and fine dining."
+Delhi,The Imperial New Delhi,Luxury,18000,4.9,Janpath,Heritage luxury hotel from 1931 with museum-worthy art collection and award-winning restaurants.
+Jaipur,Zostel Jaipur,Hostel,500,4.1,Gangapole,Colorful hostel in the old city near Hawa Mahal with rooftop fort views.
+Jaipur,Hotel Pearl Palace,Budget Hotel,1800,4.4,Hathroi Fort,Award-winning heritage budget hotel with themed rooms and rooftop restaurant.
+Jaipur,Samode Haveli,Mid-Range,6000,4.6,Gangapole,A 175-year-old restored haveli with traditional Rajasthani architecture and pool.
+Jaipur,Rambagh Palace,Luxury,25000,4.9,Bhawani Singh Road,"Former Maharaja residence, now a Taj Hotel with 47-acre Mughal gardens and polo grounds."
+Kerala,Zostel Alleppey,Hostel,550,4.0,Alleppey,Backpacker hostel near Alleppey beach and backwater jetty.
+Kerala,Tea Valley Resort Munnar,Budget Hotel,2000,4.2,Munnar,Budget resort surrounded by tea plantations with valley views.
+Kerala,Alleppey Houseboat (Premium),Mid-Range,6000,4.7,Alleppey Backwaters,"Premium houseboat with AC bedroom, upper deck, and private chef."
+Kerala,Kumarakom Lake Resort,Luxury,15000,4.8,Kumarakom,Award-winning luxury resort on Vembanad Lake with Ayurvedic spa and pool villas.
+Manali,Zostel Manali,Hostel,500,4.3,Old Manali,Popular backpacker hostel in Old Manali with mountain views and bonfire nights.
+Manali,Hotel Manali Inn,Budget Hotel,1500,3.9,Mall Road,Budget hotel on Mall Road with valley-facing rooms and in-house restaurant.
+Manali,The Orchard Greens,Mid-Range,4000,4.4,Hadimba Road,Mid-range resort near Hadimba Temple surrounded by apple orchards.
+Manali,The Himalayan,Luxury,10000,4.7,Log Huts Area,Luxury mountain resort with panoramic Himalayan views and heated pool.
+Varanasi,Zostel Varanasi,Hostel,450,4.2,Assi Ghat,Backpacker hostel near Assi Ghat with rooftop Ganga views.
+Varanasi,Hotel Alka,Budget Hotel,1200,4.0,Dashashwamedh Ghat,Heritage budget hotel right on Dashashwamedh Ghat with Ganga views.
+Varanasi,BrijRama Palace,Mid-Range,7000,4.6,Darbhanga Ghat,Restored 18th-century palace on the ghats with river-facing rooms.
+Varanasi,Taj Nadesar Palace,Luxury,20000,4.8,Nadesar,Intimate luxury palace in 40 acres of mango orchards and jasmine gardens.
+Mumbai,Zostel Mumbai,Hostel,700,4.1,Colaba,Backpacker hostel in Colaba near Gateway of India with common lounge and city tours.
+Mumbai,Hotel Residency Fort,Budget Hotel,2000,3.8,Fort,Budget hotel in Fort area near CST station with clean rooms and AC.
+Mumbai,Trident Nariman Point,Mid-Range,7000,4.5,Nariman Point,Premium hotel overlooking Marine Drive with sea-view rooms and rooftop pool.
+Mumbai,Taj Mahal Palace,Luxury,22000,4.9,Colaba,Iconic 1903 luxury hotel next to Gateway of India with harbour views and 7 restaurants.
+Udaipur,Zostel Udaipur,Hostel,500,4.2,Lal Ghat,Backpacker hostel near Lal Ghat with lake views and rooftop cafe.
+Udaipur,Hotel Lakend,Budget Hotel,2500,4.0,Fateh Sagar,Budget hotel on Fateh Sagar Lake with lake-view rooms and restaurant.
+Udaipur,Amet Haveli,Mid-Range,5000,4.5,Hanuman Ghat,Heritage lakeside haveli with rooftop restaurant overlooking Lake Pichola and City Palace.
+Udaipur,Taj Lake Palace,Luxury,30000,4.9,Lake Pichola,Floating white marble palace in the middle of Lake Pichola. One of the world's most romantic hotels.
+Rishikesh,Zostel Rishikesh,Hostel,500,4.3,Tapovan,Backpacker hostel in Tapovan near Laxman Jhula with Ganges views and yoga sessions.
+Rishikesh,Hotel Ishan,Budget Hotel,1500,3.9,Laxman Jhula,"Budget hotel near Laxman Jhula with clean rooms, river views, and yoga arrangements."
+Rishikesh,Aloha on the Ganges,Mid-Range,4500,4.4,Tapovan,"Riverside resort with private beach, spa, adventure desk, and multi-cuisine restaurant."
+Rishikesh,Ananda in the Himalayas,Luxury,35000,4.9,Narendra Nagar,"World-renowned luxury wellness resort in a Maharaja's palace estate with Ayurveda, yoga, and Ganges views."
+Agra,Zostel Agra,Hostel,500,4.1,Taj Ganj,Backpacker hostel in Taj Ganj with rooftop Taj Mahal views and common kitchen.
+Agra,Hotel Sidhartha,Budget Hotel,1200,3.8,Taj Ganj,Budget hotel near Taj Mahal east gate with AC rooms and rooftop restaurant with Taj views.
+Agra,Crystal Sarovar Premiere,Mid-Range,4000,4.3,Fatehabad Road,"Modern mid-range hotel on Fatehabad Road with pool, spa, and 2km from Taj Mahal."
+Agra,The Oberoi Amarvilas,Luxury,28000,4.9,Taj East Gate,Ultra-luxury hotel 600m from Taj Mahal. Every room has unobstructed Taj views. Mughal-inspired architecture.

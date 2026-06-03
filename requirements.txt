@@ -1,0 +1,33 @@
+# ==============================
+# Travel Itinerary Planner - POC
+# Multi-Agent RAG System
+# ==============================
+
+# --- UI ---
+streamlit
+
+# --- Backend ---
+fastapi
+uvicorn
+
+# --- LLM & Agents ---
+langchain
+langchain-community
+langchain-aws
+langgraph
+
+# --- Vector DB ---
+chromadb
+
+# --- Embeddings ---
+sentence-transformers
+
+# --- AWS SDK (Bedrock) ---
+boto3
+
+# --- Evaluation ---
+bert-score
+
+# --- Utilities ---
+pydantic
+python-dotenv

@@ -1,0 +1,41 @@
+city,name,cuisine,avg_cost_for_two_inr,rating,must_try,type,description
+Goa,Britto's (Baga Beach),Goan/Seafood,1200,4.3,Goan Fish Curry Rice,Restaurant,Iconic beachside restaurant at Baga Beach serving fresh seafood and Goan curries.
+Goa,Vinayak Family Restaurant,Goan/Local,400,4.1,Chicken Cafreal,Local Eatery,No-frills local eatery in Assagao serving authentic Goan home-style food.
+Goa,Thalassa (Vagator),Greek/Mediterranean,2000,4.5,Greek Platter,Fine Dining,Cliffside Greek restaurant in Vagator with stunning sunset views.
+Goa,Ritz Classic,Goan/Seafood,600,4.4,Crab Xec Xec,Restaurant,Popular Panjim restaurant known for authentic Goan dishes.
+Delhi,Paranthe Wali Gali,North Indian/Street Food,200,4.5,Stuffed Paranthas,Street Food,Historic lane in Chandni Chowk serving stuffed paranthas since the 1870s.
+Delhi,Karim's (Jama Masjid),Mughlai,700,4.6,Mutton Burra,Restaurant,Legendary Mughlai restaurant near Jama Masjid operating since 1913.
+Delhi,Dilli Haat Food Stalls,Multi-Regional,500,4.2,Regional Thalis,Food Court,Open-air food bazaar with stalls representing all Indian states.
+Delhi,Indian Accent,Modern Indian,6000,4.8,Daulat Ki Chaat,Fine Dining,Asia's top-ranked Indian restaurant serving inventive modern Indian cuisine.
+Jaipur,Lassiwala (MI Road),Beverages/Snacks,100,4.5,Makhaniya Lassi,Street Food,Iconic lassi shop on MI Road since 1944 serving thick creamy makhaniya lassi.
+Jaipur,LMB (Laxmi Mishthan Bhandar),Rajasthani Vegetarian,800,4.4,Dal Bati Churma,Restaurant,Heritage vegetarian restaurant in Johari Bazaar since 1727.
+Jaipur,Tapri Central,Cafe/Snacks,400,4.3,Bun Maska with Kulhad Chai,Cafe,Trendy chai cafe with 30+ chai varieties and rooftop sunset views.
+Jaipur,Suvarna Mahal (Rambagh Palace),Royal Indian,5000,4.7,Laal Maas,Fine Dining,Fine dining inside Rambagh Palace with gold-leaf ceiling and royal Rajasthani cuisine.
+Kerala,Paragon Restaurant (Kochi),Kerala,600,4.5,Kerala Fish Curry,Restaurant,"Legendary Kerala restaurant famous for fish curry, prawn fry, and biryani."
+Kerala,Kayees Rahmathulla (Kochi),Kerala/Malabar,400,4.6,Malabar Biryani,Local Eatery,Iconic eatery in Mattancherry famous for Malabar biryani and pathiri.
+Kerala,Houseboat Lunch (Alleppey),Kerala Traditional,800,4.7,Karimeen Pollichathu,Houseboat Meal,Fresh Kerala meals on houseboat with karimeen pollichathu and red rice.
+Kerala,Saravana Bhavan (Munnar),South Indian Vegetarian,300,4.0,Masala Dosa,Restaurant,Reliable South Indian vegetarian chain serving masala dosa and filter coffee.
+Manali,Drifters' Cafe (Old Manali),Continental/Cafe,600,4.4,Wood-fired Pizza,Cafe,Cozy cafe in Old Manali with river views and wood-fired pizzas.
+Manali,Johnson's Cafe,European/Indian,1000,4.3,Trout Fish,Restaurant,Charming cottage-style restaurant near Hadimba Temple with fresh river trout.
+Manali,Chopsticks (Mall Road),Tibetan/Chinese,500,4.2,Thukpa & Momos,Restaurant,Popular restaurant for Tibetan thukpa and steamed momos.
+Manali,Syal Dhaba,Himachali/North Indian,300,4.1,Siddu with Ghee,Dhaba,Authentic Himachali dhaba serving siddu and rajma chawal.
+Varanasi,Kashi Chat Bhandar,Street Food/Chaat,150,4.5,Tamatar Chaat,Street Food,Legendary chaat shop serving unique tamatar chaat.
+Varanasi,Blue Lassi Shop,Beverages/Dessert,200,4.6,Fruit Lassi,Street Food,Tiny legendary shop near Kashi Vishwanath serving 80+ lassi flavors.
+Varanasi,Baati Chokha Restaurant,North Indian/Local,500,4.3,Baati Chokha Thali,Restaurant,Themed restaurant serving baati chokha with rustic village decor.
+Varanasi,Dosa Cafe (Assi Ghat),South Indian/Cafe,300,4.1,Mysore Masala Dosa,Cafe,Popular cafe near Assi Ghat serving South Indian food and filter coffee.
+Mumbai,Leopold Cafe,Multi-Cuisine,800,4.3,Beer & Kebabs,Cafe,"Iconic cafe in Colaba since 1871, famous for its history and vibrant atmosphere."
+Mumbai,Bademiya (Colaba),Mughlai/Kebabs,500,4.5,Seekh Kebab Roll,Street Food,Famous late-night street food stall near Taj Hotel serving legendary kebab rolls.
+Mumbai,Britannia & Co,Parsi/Iranian,700,4.6,Berry Pulao,Restaurant,90-year-old Parsi restaurant in Fort area famous for berry pulao with salli.
+Mumbai,Swati Snacks,Gujarati/Snacks,600,4.4,Panki & Dal Dhokli,Restaurant,Popular vegetarian restaurant serving Gujarati street food in upscale setting.
+Udaipur,Ambrai Restaurant,Rajasthani/Indian,1200,4.7,Laal Maas,Restaurant,Lakeside restaurant at Amet Haveli with stunning views of City Palace and Lake Pichola.
+Udaipur,Natraj Dining Hall,Rajasthani Thali,300,4.3,Unlimited Rajasthani Thali,Restaurant,No-frills restaurant famous for unlimited Rajasthani thali at pocket-friendly prices.
+Udaipur,Savage Garden,Continental/Cafe,800,4.4,Wood-fired Pizza,Cafe,"Rooftop cafe with panoramic lake views serving pizzas, pastas, and cocktails."
+Udaipur,Millets of Mewar,Healthy/Rajasthani,500,4.2,Bajra Roti Thali,Restaurant,Health-focused restaurant serving traditional Rajasthani millet-based dishes.
+Rishikesh,Chotiwala Restaurant,North Indian/Vegetarian,400,4.2,Special Thali,Restaurant,Iconic vegetarian restaurant near Ram Jhula since 1958 with the famous mascot at the entrance.
+Rishikesh,Little Buddha Cafe,Continental/Israeli,600,4.4,Shakshuka & Falafel,Cafe,"Multi-level riverside cafe with Ganges views, serving Israeli and continental food."
+Rishikesh,Beatles Cafe,Cafe/Bakery,400,4.3,Banana Pancakes,Cafe,"Beatles-themed cafe near the ashram with live music, fresh juices, and baked goods."
+Rishikesh,Ramana's Organic Cafe,Organic/Healthy,500,4.5,Organic Buddha Bowl,Cafe,"Organic cafe in Tapovan serving healthy bowls, smoothies, and ayurvedic teas."
+Agra,Peshawri (ITC Mughal),North Indian/Mughlai,3000,4.7,Dal Bukhara & Sikandari Raan,Fine Dining,Award-winning restaurant in ITC Mughal hotel serving frontier cuisine with tandoor specialties.
+Agra,Mama Chicken,Mughlai/Street Food,300,4.3,Chicken Shawarma,Street Food,Popular street food joint near Sadar Bazaar famous for chicken shawarma and rolls.
+Agra,Pinch of Spice,North Indian/Mughlai,800,4.4,Paneer Lababdar,Restaurant,Popular multi-cuisine restaurant on Fatehabad Road with excellent North Indian and Mughlai food.
+Agra,Panchhi Petha Store,Sweets/Snacks,200,4.5,Agra Petha (Angoori),Sweet Shop,Famous petha shop since 1950 selling Agra's signature sweet in 50+ varieties.

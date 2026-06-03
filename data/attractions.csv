@@ -1,0 +1,57 @@
+city,name,category,entry_cost_inr,time_needed_hrs,best_time,rating,description
+Goa,Calangute Beach,Beach,0,2.5,Oct-Mar,4.3,"Calangute Beach is the largest and most popular beach in North Goa, known for its vibrant shacks, water sports like parasailing and jet skiing, and lively nightlife."
+Goa,Fort Aguada,Heritage,0,1.5,Oct-Mar,4.4,Fort Aguada is a well-preserved 17th-century Portuguese fort overlooking the Arabian Sea with a four-storey lighthouse and panoramic coastline views.
+Goa,Baga Beach,Beach,0,3.0,Oct-Mar,4.5,"Baga Beach is famous for its nightlife, beach clubs like Tito's and Mambo's, and water sports. The Saturday Night Market nearby offers great shopping."
+Goa,Anjuna Flea Market,Shopping,0,2.0,Oct-Mar,4.1,"The Anjuna Flea Market is a famous Wednesday market offering handicrafts, jewelry, spices, and clothing with live music and food stalls."
+Goa,Basilica of Bom Jesus,Heritage,0,1.0,Oct-Mar,4.6,"A UNESCO World Heritage Site housing the mortal remains of St. Francis Xavier. Built in 1605, it is one of the finest examples of baroque architecture in India."
+Goa,Dudhsagar Waterfalls,Nature,400,5.0,Oct-Jan,4.7,Dudhsagar Falls is a four-tiered waterfall at 310 meters. A jeep safari through Bhagwan Mahavir Wildlife Sanctuary leads to the falls.
+Delhi,Red Fort,Heritage,35,2.0,Oct-Mar,4.5,"The Red Fort is a UNESCO World Heritage Site built by Shah Jahan in 1638 with museums, Diwan-i-Aam, Diwan-i-Khas, and nightly Sound and Light show."
+Delhi,Qutub Minar,Heritage,35,1.5,Oct-Mar,4.6,"Qutub Minar is a 73-meter tall UNESCO World Heritage Site, the tallest brick minaret in the world, built in 1193."
+Delhi,India Gate,Landmark,0,1.0,Oct-Mar,4.4,"India Gate is a war memorial dedicated to 70,000 Indian soldiers who died in World War I. Beautifully illuminated at night."
+Delhi,Chandni Chowk,Shopping,0,3.0,Oct-Mar,4.2,"One of the oldest and busiest markets in Old Delhi, famous for street food, spices at Khari Baoli, and electronics."
+Delhi,Humayun's Tomb,Heritage,35,1.5,Oct-Mar,4.7,"A UNESCO World Heritage Site and the first garden-tomb on the Indian subcontinent, inspiring the design of the Taj Mahal."
+Delhi,Lotus Temple,Landmark,0,1.0,Oct-Mar,4.5,"The Lotus Temple is a Bahai House of Worship shaped like a lotus flower with 27 marble petals, welcoming people of all faiths."
+Jaipur,Amber Fort,Heritage,200,3.0,Oct-Mar,4.7,"Amber Fort is a majestic hilltop fort built in 1592 with Sheesh Mahal, Diwan-i-Aam, and Ganesh Pol gate."
+Jaipur,Hawa Mahal,Heritage,50,1.0,Oct-Mar,4.5,"Hawa Mahal, the Palace of Winds, is a five-storey pink sandstone structure with 953 small windows built in 1799."
+Jaipur,City Palace,Heritage,500,2.5,Oct-Mar,4.6,"The City Palace blends Rajasthani and Mughal architecture with museums, royal costumes, and armory collections."
+Jaipur,Jantar Mantar,Heritage,50,1.0,Oct-Mar,4.3,A UNESCO World Heritage astronomical observation site with the world's largest stone sundial.
+Jaipur,Nahargarh Fort,Heritage,50,2.0,Oct-Mar,4.4,Nahargarh Fort on the Aravalli Hills offers breathtaking sunset views of Jaipur city with a wax museum and rooftop restaurant.
+Jaipur,Johari Bazaar,Shopping,0,2.0,Oct-Mar,4.2,"Jaipur's most famous jewelry market for Kundan, Meenakari, gemstone jewelry, and Rajasthani textiles."
+Kerala,Alleppey Backwaters,Nature,0,6.0,Sep-Mar,4.8,"Alleppey is the Venice of the East, famous for houseboat cruises through palm-fringed backwater canals and lagoons."
+Kerala,Munnar Tea Gardens,Nature,0,4.0,Sep-Mar,4.7,"Munnar is a hill station at 1,600m with sprawling tea plantations, misty mountains, and the Tata Tea Museum."
+Kerala,Fort Kochi,Heritage,0,3.0,Sep-Mar,4.5,"Fort Kochi reflects Portuguese, Dutch, and British colonial influences with Chinese Fishing Nets and St. Francis Church."
+Kerala,Periyar Wildlife Sanctuary,Nature,300,5.0,Sep-May,4.6,One of India's finest wildlife reserves in Thekkady with boat rides offering sightings of elephants and bison.
+Kerala,Varkala Beach,Beach,0,3.0,Oct-Mar,4.5,"Varkala Beach is unique for its dramatic cliff backdrop with the 2,000-year-old Janardanaswamy Temple nearby."
+Manali,Solang Valley,Adventure,0,5.0,"Dec-Feb (snow), May-Jul (summer)",4.6,"Solang Valley offers skiing in winter and paragliding, zorbing in summer, surrounded by snow-capped peaks."
+Manali,Rohtang Pass,Nature,550,6.0,May-Oct,4.7,"Rohtang Pass at 3,978m offers stunning views of glaciers and peaks. Permit required from Manali SDM office."
+Manali,Hadimba Temple,Heritage,0,1.0,Year-round,4.5,A unique 1553 wooden temple dedicated to Hidimbi Devi set amidst tall deodar trees with pagoda-style architecture.
+Manali,Old Manali,Culture,0,3.0,Year-round,4.3,"Old Manali is a charming village known for bohemian cafes, bakeries, handicraft shops, and the Manu Temple."
+Manali,Jogini Waterfall,Nature,0,3.0,May-Jul,4.2,A beautiful 150-foot cascade reached via a 3km trek through apple orchards and pine forests.
+Varanasi,Dashashwamedh Ghat,Heritage,0,2.0,Oct-Mar,4.7,The main ghat with the famous Ganga Aarti ceremony every evening at 7 PM with fire rituals and chanting.
+Varanasi,Kashi Vishwanath Temple,Religious,0,1.5,Oct-Mar,4.8,"One of the 12 Jyotirlingas, the most famous Hindu temple dedicated to Lord Shiva with the new Kashi Vishwanath Corridor."
+Varanasi,Sarnath,Heritage,20,2.5,Oct-Mar,4.6,"Where Lord Buddha gave his first sermon. Features the Dhamek Stupa, Ashoka Pillar, and Sarnath Museum."
+Varanasi,Boat Ride on Ganges,Experience,250,1.5,Oct-Mar,4.7,"An early morning boat ride witnessing ghats coming alive with pilgrims, yoga practitioners, and the sunrise."
+Varanasi,Assi Ghat,Heritage,0,1.5,Oct-Mar,4.4,"The southernmost ghat where the Assi River meets the Ganges, popular for morning yoga and cultural performances."
+Varanasi,BHU & Bharat Kala Bhavan,Culture,20,2.0,Year-round,4.3,"Banaras Hindu University campus with the Bharat Kala Bhavan museum housing over 100,000 artifacts."
+Mumbai,Gateway of India,Landmark,0,1.0,Oct-Mar,4.5,Iconic arch monument built in 1924 overlooking the Arabian Sea. Ferries to Elephanta Caves depart from here.
+Mumbai,Marine Drive,Landmark,0,1.5,Year-round,4.6,"A 3.6km arc-shaped boulevard along the coastline, nicknamed the Queen's Necklace for its glittering night lights."
+Mumbai,Elephanta Caves,Heritage,40,4.0,Oct-Mar,4.4,UNESCO World Heritage rock-cut cave temples on Elephanta Island dedicated to Lord Shiva with the 7th-century Trimurti sculpture.
+Mumbai,Chhatrapati Shivaji Terminus,Heritage,0,1.0,Year-round,4.5,A UNESCO World Heritage Site and one of the most magnificent Victorian Gothic railway stations in the world.
+Mumbai,Colaba Causeway Market,Shopping,0,2.5,Year-round,4.2,"Mumbai's most famous street market for clothes, jewelry, antiques, and handicrafts near the Taj Hotel."
+Mumbai,Juhu Beach,Beach,0,2.0,Oct-Mar,4.0,"Mumbai's most popular beach famous for street food stalls serving pav bhaji, bhel puri, and vada pav."
+Udaipur,City Palace Udaipur,Heritage,300,3.0,Oct-Mar,4.7,"The largest palace complex in Rajasthan overlooking Lake Pichola with museums, courtyards, and peacock mosaics."
+Udaipur,Lake Pichola Boat Ride,Experience,400,1.5,Oct-Mar,4.8,"A boat ride offering stunning views of City Palace, Jag Mandir, and the Lake Palace. Sunset rides are magical."
+Udaipur,Jagdish Temple,Religious,0,1.0,Year-round,4.4,A beautifully carved Indo-Aryan temple dedicated to Lord Vishnu built in 1651 with intricate wall carvings.
+Udaipur,Saheliyon Ki Bari,Nature,50,1.0,Oct-Mar,4.3,"Garden of Maidens with lotus pools, marble elephants, and cascading fountains built for 48 royal maidens."
+Udaipur,Fateh Sagar Lake,Nature,0,2.0,Oct-Mar,4.5,"An artificial lake surrounded by hills with Nehru Garden on an island, popular for boating and evening walks."
+Udaipur,Haldighati,Heritage,0,2.0,Oct-Mar,4.2,The historic mountain pass of the Battle of Haldighati with the Maharana Pratap Museum and Chetak Samadhi.
+Rishikesh,Laxman Jhula,Landmark,0,1.0,Sep-Jun,4.4,An iconic iron suspension bridge over the Ganges built in 1929 connecting Tapovan to Jonk with temples on both sides.
+Rishikesh,River Rafting,Adventure,800,3.0,Sep-Jun,4.7,White water rafting with Grade 3-4 rapids. The 16km Shivpuri to Laxman Jhula stretch is the most popular.
+Rishikesh,Beatles Ashram,Heritage,150,2.0,Year-round,4.5,Where the Beatles stayed in 1968 for transcendental meditation. Features meditation caves and graffiti art galleries.
+Rishikesh,Triveni Ghat,Religious,0,1.5,Year-round,4.6,"The most sacred bathing ghat where Ganga, Yamuna, and Saraswati are believed to meet. Beautiful evening Ganga Aarti."
+Rishikesh,Neer Garh Waterfall,Nature,30,2.0,Jul-Sep,4.3,A two-tiered waterfall 5km from Laxman Jhula with natural rock pools perfect for swimming.
+Agra,Taj Mahal,Heritage,50,3.0,Oct-Mar,4.9,UNESCO World Heritage Site and one of the Seven Wonders. Built by Shah Jahan for Mumtaz Mahal in white marble.
+Agra,Agra Fort,Heritage,50,2.5,Oct-Mar,4.6,UNESCO World Heritage Site built by Emperor Akbar in 1565. Offers beautiful Taj Mahal views from Musamman Burj.
+Agra,Fatehpur Sikri,Heritage,50,3.0,Oct-Mar,4.5,"UNESCO World Heritage ghost city built by Akbar in 1571 with the Buland Darwaza, the tallest gateway in the world."
+Agra,Mehtab Bagh,Nature,50,1.5,Oct-Mar,4.4,"A charbagh garden opposite the Taj Mahal offering the most stunning sunset views, far less crowded."
+Agra,Kinari Bazaar,Shopping,0,2.0,Year-round,4.1,"Agra's oldest market famous for marble inlay work, leather goods, zardozi embroidery, and petha sweets."

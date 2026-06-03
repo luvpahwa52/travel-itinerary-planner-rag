@@ -1,0 +1,41 @@
+city,mode,avg_cost_inr,cost_unit,route,description
+Goa,Scooter/Bike Rental,400,per day,Self-drive across Goa,"Most popular way to explore Goa. Scooter 300-400/day, bike 500-800/day."
+Goa,Local Bus,30,per trip,Panjim to Calangute/Mapusa,Kadamba buses connecting major towns. Cheap but crowded. Stop by 9 PM.
+Goa,Taxi (Non-AC),1500,full day,North Goa sightseeing,Pre-paid taxis for full-day sightseeing. Use GoaMiles app.
+Goa,Flight to Goa,4000,one way,Metro cities to Dabolim/Mopa Airport,Two airports Dabolim and new Mopa. Budget fares 2500-6000.
+Delhi,Delhi Metro,30,per trip,All major tourist spots,Best way to get around. Tourist Card 200/day for unlimited rides.
+Delhi,Uber/Ola,200,per trip (10km),Point to point,Ride-hailing apps work well. 150-300 for 10km. Surge during rush hours.
+Delhi,Auto Rickshaw,100,per trip (5km),Short distances,Green CNG autos ubiquitous. Negotiate or use Uber Auto.
+Delhi,Hop-On Hop-Off Bus,500,full day pass,Red Fort to India Gate to Humayun Tomb to Qutub Minar,HOHO tourist bus covering 19 stops. Full-day 500 with audio guide.
+Jaipur,Auto Rickshaw,80,per trip (5km),Within old city,Primary transport. Hawa Mahal to Amber Fort 200-250.
+Jaipur,Full Day Taxi,1800,full day,Amber Fort to Hawa Mahal to City Palace to Nahargarh Fort,AC sedan 1800-2200 for 8hrs/80km. Drivers double as guides.
+Jaipur,Jaipur Metro,20,per trip,Mansarovar to Chandpole,Pink Line connects to old city near Hawa Mahal. Clean and uncrowded.
+Jaipur,Train from Delhi,800,one way,Delhi to Jaipur (5-6 hours),Shatabdi Express 5 hrs 800 CC. Multiple daily trains.
+Kerala,Houseboat (Alleppey),5000,overnight,Alleppey backwater cruise,"Overnight cruise with meals. Basic 4000, premium 6000-8000."
+Kerala,KSRTC Bus,250,per trip,Kochi to Munnar/Alleppey to Thekkady,Comfortable AC and non-AC buses between tourist towns.
+Kerala,Auto Rickshaw / Uber,150,per trip,Within Kochi,Works well in Kochi. Ferry from Ernakulam to Fort Kochi just 6.
+Kerala,Flight to Kerala,4500,one way,Metro cities to Kochi/Trivandrum,"3 airports Kochi, Trivandrum, Calicut. Budget fares 3000-7000."
+Manali,Volvo Bus from Delhi,1200,one way,Delhi to Manali (12-14 hours),"Overnight Volvo buses. Semi-sleeper 1000-1200, sleeper 1500-1800."
+Manali,Local Taxi,1500,full day,Manali to Solang/Rohtang/local sights,"Union taxis for Solang 1000-1500, Rohtang 2500-3500."
+Manali,Local Bus,30,per trip,Manali to Old Manali/Vashisht/Naggar,HRTC local buses every 30-60 min. Cheap but no AC.
+Manali,Bike Rental,1000,per day,Self-ride to Solang/Rohtang,Royal Enfield 800-1500/day. Valid license required.
+Varanasi,Boat Ride (Ganges),250,per person,Assi Ghat to Dashashwamedh to Manikarnika Ghat,"Sunrise and sunset boat rides. Shared 100-150, private 250-500."
+Varanasi,Auto Rickshaw / E-Rickshaw,50,per trip,Station to Assi/Dashashwamedh Ghat,E-rickshaws 30-50 for short trips. Old city lanes too narrow for cars.
+Varanasi,Cycle Rickshaw,30,per trip,Short distances in old Varanasi,Traditional cycle rickshaws for narrow old city lanes. 20-50.
+Varanasi,Train to Varanasi,600,one way,Delhi to Varanasi (8-12 hours),"Vande Bharat 8 hrs 1800, Shiv Ganga Express 12 hrs."
+Mumbai,Mumbai Local Train,15,per trip,Churchgate to Borivali / CST to Thane,"The lifeline of Mumbai. Western, Central, and Harbour lines."
+Mumbai,Uber/Ola,250,per trip (10km),Point to point across Mumbai,Ride-hailing works well. 200-400 for 10km. Heavy traffic can double time.
+Mumbai,Kaali-Peeli Taxi,150,per trip,Within South Mumbai,Iconic black-and-yellow metered taxis. 28 base fare plus 17/km.
+Mumbai,Ferry to Elephanta,200,round trip,Gateway of India to Elephanta Island,Regular ferries from Gateway of India. 1 hour each way. Runs 9 AM - 2 PM.
+Udaipur,Auto Rickshaw,80,per trip,Within Udaipur city,Primary transport. City Palace to Fateh Sagar 60-80. Negotiate before boarding.
+Udaipur,Full Day Taxi,1500,full day,City Palace to Lake Pichola to Haldighati,AC sedan for full day sightseeing 1500-2000. Book through hotel.
+Udaipur,Boat Ride Lake Pichola,400,per person,City Palace jetty to Jag Mandir,30-min boat ride on Lake Pichola. Sunset rides recommended. 400-800.
+Udaipur,Train from Delhi/Jaipur,500,one way,Jaipur to Udaipur (6-8 hours),Chetak Express from Jaipur 6 hrs. From Delhi 12 hrs overnight.
+Rishikesh,Shared Jeep/Auto,30,per trip,Rishikesh to Ram Jhula/Laxman Jhula,Shared autos and jeeps between main town and Laxman Jhula area. 20-40.
+Rishikesh,Bus from Delhi,500,one way,Delhi to Rishikesh (6-7 hours),UPSRTC and private buses from Delhi ISBT. AC Volvo 500-800.
+Rishikesh,Rafting Transport,200,included,Shivpuri to Laxman Jhula,Rafting operators provide pickup from Laxman Jhula to Shivpuri start point.
+Rishikesh,Walking,0,free,Laxman Jhula area,Most attractions in Laxman Jhula area are walkable. Best way to explore ashrams and cafes.
+Agra,Train from Delhi,700,one way,Delhi to Agra (2-3 hours),"Gatimaan Express 1.5 hrs 700, Shatabdi 2 hrs 800. Best for day trips."
+Agra,Auto Rickshaw,100,per trip,Station to Taj Mahal / Agra Fort,Pre-paid autos at station. Taj Mahal to Agra Fort 80-100.
+Agra,Full Day Taxi,1500,full day,Taj Mahal to Agra Fort to Fatehpur Sikri,AC sedan for full day 1500-2000. Fatehpur Sikri is 40km so taxi recommended.
+Agra,E-Rickshaw,30,per trip,Short distances near Taj Mahal,Battery-operated rickshaws for eco-friendly short trips near Taj area. 20-50.

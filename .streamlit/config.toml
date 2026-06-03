@@ -1,0 +1,288 @@
+import streamlit as st
+import sys
+import os
+import time
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from graph.workflow import run_travel_planner
+from agents.scorer import save_user_feedback
+
+st.set_page_config(page_title="Travel Itinerary Planner", page_icon="🧭", layout="wide", initial_sidebar_state="collapsed")
+
+# =====================================================================
+# CSS — Minimal, tested, no wrapper cards, explicit visible ranges
+# =====================================================================
+st.markdown("""
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+    .stApp { background:#F7F5F2; font-family:'Inter',sans-serif; }
+    #MainMenu,footer,header,.stDeployButton,[data-testid="stToolbar"]{display:none!important}
+
+    /* Force text visible everywhere */
+    .stApp p,.stApp span,.stApp div,.stApp li,.stApp h1,.stApp h2,.stApp h3,.stApp h4,
+    .stApp strong,.stApp em,.stApp label,.stApp td,.stApp th{color:#1F2937!important}
+
+    /* Kill all ghost containers Streamlit injects */
+    [data-testid="stVerticalBlock"]>div:has(> [data-testid="stVerticalBlock"]) {
+        background:transparent!important; border:none!important; box-shadow:none!important; padding:0!important;
+    }
+    [data-testid="column"]>div{background:transparent!important;border:none!important;box-shadow:none!important}
+    section[data-testid="stSidebar"]{background:#F7F5F2}
+
+    /* Hero */
+    .hero{text-align:center;padding:2rem 1rem 1rem}
+    .hero-ic{font-size:2.2rem;margin-bottom:0.5rem}
+    .hero h1{font-family:'Fraunces',Georgia,serif!important;font-size:2.3rem!important;font-weight:700!important;color:#2C3E50!important;margin:0!important;letter-spacing:-0.02em}
+    .hero-p{font-size:0.95rem;color:#5F6B7A!important;margin-top:0.3rem}
+    .hero-bar{width:45px;height:3px;background:#C17817;border-radius:2px;margin:0.9rem auto 0}
+    .chips{display:flex;justify-content:center;gap:0.35rem;flex-wrap:wrap;margin-top:0.8rem}
+    .chip{background:#FFF;color:#5F6B7A!important;border:1px solid #E8E3DB;padding:0.2rem 0.65rem;border-radius:16px;font-size:0.63rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase}
+
+    /* Section title */
+    .stitle{font-family:'Fraunces',Georgia,serif;font-size:0.85rem;font-weight:600;color:#C17817!important;text-transform:uppercase;letter-spacing:0.08em;margin:0.8rem 0 0.3rem}
+
+    /* Range display under sliders */
+    .range-row{display:flex;justify-content:space-between;margin-top:-0.5rem;margin-bottom:0.5rem}
+    .range-val{font-size:0.78rem;font-weight:700;color:#2C3E50!important;background:#F0ECE5;padding:0.15rem 0.5rem;border-radius:4px}
+
+    /* Metric tiles */
+    .mt{background:#FFF;border:1px solid #E8E3DB;border-radius:11px;padding:1rem 0.7rem;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.03)}
+    .mt-v{font-family:'Fraunces',Georgia,serif;font-size:1.8rem;font-weight:700;color:#2C3E50!important;line-height:1.1}
+    .mt-l{font-size:0.6rem;font-weight:700;color:#8D95A0!important;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.25rem}
+
+    /* Badges */
+    .bp{display:inline-block;padding:0.18rem 0.6rem;border-radius:16px;font-size:0.68rem;font-weight:700}
+    .bp-pass{background:#ECFDF3;color:#0F7B3F!important;border:1px solid #BBF7D0}
+    .bp-revise{background:#FFFBEB;color:#B8860B!important;border:1px solid #FDE68A}
+    .bp-reject{background:#FEF2F2;color:#B33A3A!important;border:1px solid #FECACA}
+    .bp-high{background:#ECFDF3;color:#0F7B3F!important;border:1px solid #BBF7D0}
+    .bp-med{background:#FFFBEB;color:#B8860B!important;border:1px solid #FDE68A}
+    .bp-low{background:#FEF2F2;color:#B33A3A!important;border:1px solid #FECACA}
+
+    /* Score bars */
+    .sb{margin:0.55rem 0}
+    .sb-h{display:flex;justify-content:space-between;margin-bottom:0.15rem}
+    .sb-n{font-size:0.78rem;color:#5F6B7A!important;font-weight:500}
+    .sb-p{font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#2C3E50!important;font-weight:600}
+    .sb-t{background:#F0ECE5;border-radius:4px;height:6px;overflow:hidden}
+    .sb-f{height:100%;border-radius:4px;transition:width 0.8s ease}
+    .fg{background:linear-gradient(90deg,#34D399,#059669)}.fa{background:linear-gradient(90deg,#FBBF24,#D97706)}.fr{background:linear-gradient(90deg,#F87171,#DC2626)}
+
+    /* Pipeline */
+    .pl{display:flex;align-items:center;justify-content:center;gap:0.15rem;flex-wrap:wrap;padding:0.6rem 0}
+    .pn{display:inline-flex;align-items:center;gap:0.25rem;padding:0.3rem 0.65rem;border-radius:6px;font-size:0.71rem;font-weight:600}
+    .pd{background:#ECFDF3;color:#0F7B3F!important;border:1px solid #BBF7D0}
+    .pa{background:#C17817;color:#FFF!important;border:1px solid #C17817}
+    .pw{background:#F0ECE5;color:#8D95A0!important;border:1px solid #E8E3DB}
+    .parr{color:#CCC!important;font-size:0.65rem}
+
+    /* White cards */
+    .wc{background:#FFF;border:1px solid #E8E3DB;border-radius:11px;padding:1.4rem 1.6rem;margin:0.4rem 0;box-shadow:0 1px 3px rgba(0,0,0,0.03)}
+    .wc *{color:#1F2937!important}
+    .wc-t{font-family:'Fraunces',Georgia,serif;font-size:1rem;font-weight:600;color:#2C3E50!important;margin-bottom:0.7rem;padding-bottom:0.4rem;border-bottom:2px solid #F0ECE5}
+
+    /* Itinerary */
+    .ib{background:#FFF;border:1px solid #E8E3DB;border-radius:11px;padding:1.6rem 2rem;margin:0.4rem 0;box-shadow:0 1px 3px rgba(0,0,0,0.03);font-size:0.88rem;line-height:1.85}
+    .ib,.ib *{color:#1F2937!important}
+
+    /* Sources */
+    .si{padding:0.55rem 0;border-bottom:1px solid #F0ECE5}.si:last-child{border-bottom:none}
+    .si-n{font-weight:600;font-size:0.85rem;color:#2C3E50!important}
+    .si-t{display:inline-block;background:#F6F4F0;color:#5F6B7A!important;border:1px solid #E8E3DB;padding:0.1rem 0.4rem;border-radius:3px;font-size:0.62rem;font-weight:600;margin-left:0.2rem}
+    .si-d{font-size:0.74rem;color:#8D95A0!important;margin-top:0.12rem;line-height:1.45}
+
+    /* Detail rows */
+    .dr{display:flex;justify-content:space-between;padding:0.35rem 0;border-bottom:1px solid #F0ECE5;font-size:0.82rem}.dr:last-child{border-bottom:none}
+    .dr-k{color:#8D95A0!important;font-weight:500}.dr-v{color:#2C3E50!important;font-weight:600}
+
+    /* Disclaimer */
+    .disc{background:#FFFBEB;border-left:4px solid #F59E0B;border-radius:0 8px 8px 0;padding:0.7rem 1rem;font-size:0.82rem;margin:0.5rem 0}
+    .disc,.disc *{color:#78350F!important}
+
+    /* Feedback */
+    .fbb{background:#F6F4F0;border:1.5px dashed #E8E3DB;border-radius:11px;padding:1.3rem;text-align:center}
+    .fbb *{color:#1F2937!important}
+    .fbb-t{font-family:'Fraunces',Georgia,serif;font-size:1.05rem;font-weight:600;color:#2C3E50!important}
+    .fbb-s{font-size:0.82rem;color:#5F6B7A!important;margin-top:0.1rem}
+
+    /* Footer */
+    .foot{text-align:center;padding:2rem 0 1rem;font-size:0.68rem;color:#AAA!important;letter-spacing:0.03em}
+    .foot *{color:#AAA!important}
+
+    /* Button — Dark slate, white text, full width */
+    .stButton>button{background:#2C3E50!important;color:#FFF!important;border:none!important;border-radius:9px;padding:0.6rem 1.5rem;font-weight:600;font-size:0.87rem;width:100%;box-shadow:0 2px 6px rgba(44,62,80,0.18);transition:all 0.2s}
+    .stButton>button:hover{background:#1a2a3a!important;color:#FFF!important;transform:translateY(-1px);box-shadow:0 4px 14px rgba(44,62,80,0.22)}
+    .stButton>button span,.stButton>button p,.stButton>button div{color:#FFF!important}
+
+    /* Selectbox */
+    .stSelectbox>div>div{border-radius:9px;border-color:#E8E3DB;background:#F6F4F0}
+
+    /* Slider track */
+    .stSlider>div>div>div{background-color:#D4B896}
+
+    /* Tabs */
+    .stTabs [data-baseweb="tab-list"]{gap:0.25rem;border-bottom:2px solid #F0ECE5}
+    .stTabs [data-baseweb="tab"]{border-radius:7px 7px 0 0;font-weight:600;font-size:0.78rem;padding:0.4rem 0.8rem}
+    .stTabs [data-baseweb="tab-list"] button p{color:#8D95A0!important;font-weight:600!important}
+    .stTabs [aria-selected="true"]{border-bottom:2.5px solid #C17817!important}
+    .stTabs [aria-selected="true"] p{color:#C17817!important;font-weight:700!important}
+
+    /* Multiselect */
+    .stMultiSelect [data-baseweb="tag"]{background:#C17817!important;border-radius:5px}
+    .stMultiSelect [data-baseweb="tag"] span{color:#FFF!important}
+
+    /* Radio/Textarea */
+    .stRadio label,.stRadio p{color:#1F2937!important}
+    .stTextArea textarea{color:#1F2937!important;border-color:#E8E3DB;border-radius:9px;background:#F6F4F0}
+
+    .sep{height:1px;background:#E8E3DB;margin:1rem 0}
+</style>
+""", unsafe_allow_html=True)
+
+# =====================================================================
+# HELPERS
+# =====================================================================
+def vb(v):
+    c={"PASS":"bp-pass","REVISE":"bp-revise","REJECT":"bp-reject"}
+    i={"PASS":"✓","REVISE":"↻","REJECT":"✗"}
+    return f'<span class="bp {c.get(v,"bp-revise")}">{i.get(v,"?")} {v}</span>'
+def cb(c):
+    m={"HIGH":"bp-high","MEDIUM":"bp-med","LOW":"bp-low"}
+    return f'<span class="bp {m.get(c,"bp-med")}">● {c}</span>'
+def bar(l,s):
+    p=int(s*100);f="fg" if s>=0.8 else("fa" if s>=0.6 else "fr")
+    return f'<div class="sb"><div class="sb-h"><span class="sb-n">{l}</span><span class="sb-p">{p}%</span></div><div class="sb-t"><div class="sb-f {f}" style="width:{p}%"></div></div></div>'
+def pipe(step):
+    ns=[("🧠","Supervisor"),("🔍","Retriever"),("✍️","Planner"),("✅","Validator"),("📊","Scorer")]
+    h='<div class="pl">'
+    for i,(ic,nm) in enumerate(ns):
+        cls="pd" if i<step else("pa" if i==step else "pw")
+        h+=f'<span class="pn {cls}">{ic} {nm}</span>'
+        if i<len(ns)-1:h+='<span class="parr">›</span>'
+    return h+'</div>'
+
+# =====================================================================
+# HERO
+# =====================================================================
+st.markdown("""
+<div class="hero">
+    <div class="hero-ic">🧭</div>
+    <h1>Travel Itinerary Planner</h1>
+    <div class="hero-p">Multi-Agent RAG System — Intelligent, Validated & Source-Grounded</div>
+    <div class="hero-bar"></div>
+    <div class="chips">
+        <span class="chip">AWS Bedrock</span><span class="chip">LangGraph</span><span class="chip">ChromaDB</span>
+        <span class="chip">5 AI Agents</span><span class="chip">56 Destinations</span><span class="chip">10 Cities</span>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+# =====================================================================
+# INPUT — Using sidebar to completely avoid ghost container issue
+# =====================================================================
+CITIES=["Goa","Delhi","Jaipur","Kerala","Manali","Varanasi","Mumbai","Udaipur","Rishikesh","Agra"]
+INTERESTS=["Beach","Heritage","Food","Adventure","Shopping","Nature","Religious","Nightlife","Cafes","Culture"]
+
+# Use sidebar for inputs — eliminates ALL ghost container issues
+with st.sidebar:
+    st.markdown("### 🧭 Plan Your Trip")
+    city = st.selectbox("Destination", CITIES)
+    days = st.slider("Duration (Days)", 1, 7, 3)
+    budget = st.slider("Budget (₹)", 3000, 50000, 15000, step=1000, format="₹%d")
+    interests = st.multiselect("Interests", INTERESTS, default=["Heritage","Food"])
+    go = st.button("✦  Plan My Trip", use_container_width=True)
+
+# Show selected inputs as summary on main page
+_,cc,_ = st.columns([1,2,1])
+with cc:
+    st.markdown(f"""
+    <div style="background:#FFF;border:1px solid #E8E3DB;border-radius:11px;padding:1rem 1.5rem;margin:0.5rem 0;box-shadow:0 1px 3px rgba(0,0,0,0.03);display:flex;justify-content:space-around;flex-wrap:wrap;gap:0.5rem">
+        <div style="text-align:center"><div style="font-size:0.6rem;font-weight:700;color:#8D95A0!important;text-transform:uppercase;letter-spacing:0.08em">Destination</div><div style="font-size:1rem;font-weight:700;color:#2C3E50!important">{city}</div></div>
+        <div style="text-align:center"><div style="font-size:0.6rem;font-weight:700;color:#8D95A0!important;text-transform:uppercase;letter-spacing:0.08em">Duration</div><div style="font-size:1rem;font-weight:700;color:#2C3E50!important">{days} days</div></div>
+        <div style="text-align:center"><div style="font-size:0.6rem;font-weight:700;color:#8D95A0!important;text-transform:uppercase;letter-spacing:0.08em">Budget</div><div style="font-size:1rem;font-weight:700;color:#2C3E50!important">₹{budget:,}</div></div>
+        <div style="text-align:center"><div style="font-size:0.6rem;font-weight:700;color:#8D95A0!important;text-transform:uppercase;letter-spacing:0.08em">Interests</div><div style="font-size:1rem;font-weight:700;color:#2C3E50!important">{', '.join(interests) if interests else 'Sightseeing'}</div></div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    if not go:
+        st.markdown('<p style="text-align:center;color:#8D95A0!important;font-size:0.85rem;margin-top:1rem">← Open the sidebar to configure and click <strong>Plan My Trip</strong></p>', unsafe_allow_html=True)
+
+# =====================================================================
+# RESULTS
+# =====================================================================
+if go:
+    interests_str=", ".join(x.lower() for x in interests) if interests else "sightseeing"
+    query=f"{days} day trip to {city} under {budget} with {interests_str}"
+
+    _,ca,_=st.columns([1,2,1])
+    with ca:
+        st.markdown('<div class="sep"></div>',unsafe_allow_html=True)
+        pp=st.empty();sp=st.empty()
+        for idx,msg in enumerate(["Extracting travel intent…","Searching knowledge base…","Crafting your itinerary…"]):
+            pp.markdown(pipe(idx),unsafe_allow_html=True)
+            sp.markdown(f'<p style="text-align:center;color:#8D95A0!important;font-size:0.82rem;font-style:italic">{msg}</p>',unsafe_allow_html=True)
+            time.sleep(0.4)
+
+    result=run_travel_planner(query)
+
+    _,ca2,_=st.columns([1,2,1])
+    with ca2:
+        for idx,msg in [(3,"Validating accuracy…"),(4,"Scoring faithfulness…")]:
+            pp.markdown(pipe(idx),unsafe_allow_html=True)
+            sp.markdown(f'<p style="text-align:center;color:#8D95A0!important;font-size:0.82rem;font-style:italic">{msg}</p>',unsafe_allow_html=True)
+            time.sleep(0.3)
+        pp.markdown(pipe(5),unsafe_allow_html=True);sp.empty()
+
+    # Metrics
+    st.markdown('<div style="height:0.6rem"></div>',unsafe_allow_html=True)
+    t1,t2,t3,t4,t5=st.columns(5)
+    for col,key,lbl in [(t1,"overall_accuracy","Overall Accuracy"),(t2,"faithfulness_score","Faithfulness"),(t3,"relevance_score","Relevance"),(t4,"source_coverage","Source Coverage")]:
+        with col:st.markdown(f'<div class="mt"><div class="mt-v">{result.get(key,0):.0%}</div><div class="mt-l">{lbl}</div></div>',unsafe_allow_html=True)
+    with t5:st.markdown(f'<div class="mt"><div style="margin-bottom:0.2rem">{vb(result.get("validation_result","PASS"))}</div>{cb(result.get("confidence_level","MEDIUM"))}<div class="mt-l" style="margin-top:0.25rem">Validation</div></div>',unsafe_allow_html=True)
+
+    # Tabs
+    st.markdown('<div style="height:0.4rem"></div>',unsafe_allow_html=True)
+    tab1,tab2,tab3,tab4=st.tabs(["📋  Itinerary","📊  Scores & Details","📚  Sources","💬  Feedback"])
+
+    with tab1:
+        d=result.get("disclaimer","")
+        if d:st.markdown(f'<div class="disc">{d}</div>',unsafe_allow_html=True)
+        st.markdown(f'<div class="ib">{result.get("itinerary","No itinerary generated.")}</div>',unsafe_allow_html=True)
+
+    with tab2:
+        s1,s2=st.columns(2)
+        with s1:
+            st.markdown('<div class="wc">',unsafe_allow_html=True)
+            st.markdown('<div class="wc-t">Quality Scores</div>',unsafe_allow_html=True)
+            st.markdown(bar("Faithfulness",result.get("faithfulness_score",0)),unsafe_allow_html=True)
+            st.markdown(bar("Relevance",result.get("relevance_score",0)),unsafe_allow_html=True)
+            st.markdown(bar("Source Coverage",result.get("source_coverage",0)),unsafe_allow_html=True)
+            st.markdown(bar("Overall Accuracy",result.get("overall_accuracy",0)),unsafe_allow_html=True)
+            st.markdown('</div>',unsafe_allow_html=True)
+        with s2:
+            intent=result.get("intent",{});bg=intent.get("budget","N/A");bf=f"₹{bg:,}" if isinstance(bg,int) else f"₹{bg}"
+            rows=[("Destination",intent.get("city","—")),("Duration",f"{intent.get('days','—')} days"),("Budget",bf),("Interests",", ".join(intent.get("interests",[]))),("Validation",result.get("validation_result","—")),("Confidence",result.get("confidence_level","—")),("Revisions",str(result.get("revision_count",0))),("Sources",str(len(result.get("sources_used",[])))),("Log ID",f"#{result.get('log_id','—')}")]
+            rh="".join(f'<div class="dr"><span class="dr-k">{k}</span><span class="dr-v">{v}</span></div>' for k,v in rows)
+            st.markdown(f'<div class="wc"><div class="wc-t">Pipeline Details</div>{rh}</div>',unsafe_allow_html=True)
+
+    with tab3:
+        ctx=result.get("context",[]);im={"attractions":"📍","hotels":"🏨","food":"🍽️","transport":"🚗"}
+        sh=""
+        for ch in ctx:
+            m=ch.get("metadata",{})
+            sh+=f'<div class="si"><span class="si-n">{im.get(m.get("source",""),"📄")} {m.get("name","—")}</span><span class="si-t">{m.get("source","")}</span><span class="si-t">{m.get("city","")}</span><span class="si-t">₹{m.get("cost",0)}</span><div class="si-d">{ch.get("document","")[:140]}…</div></div>'
+        st.markdown(f'<div class="wc"><div class="wc-t">Source Citations</div><p style="font-size:0.82rem;color:#8D95A0!important;margin-bottom:0.7rem">Every recommendation is grounded in verified source data.</p>{sh}</div>',unsafe_allow_html=True)
+
+    with tab4:
+        st.markdown('<div class="fbb"><div class="fbb-t">Was this itinerary helpful?</div><div class="fbb-s">Your feedback improves future recommendations.</div></div>',unsafe_allow_html=True)
+        _,fcc,_=st.columns([1,2,1])
+        with fcc:
+            rating=st.radio("r",[1,2,3,4,5],format_func=lambda x:"⭐"*x,horizontal=True,label_visibility="collapsed")
+            fb=st.text_area("f",placeholder="What did you like? What could be improved?",height=80,label_visibility="collapsed")
+            if st.button("Submit Feedback"):
+                lid=result.get("log_id",0)
+                if lid:save_user_feedback(lid,rating,fb);st.success(f"Thank you! Your {rating}-star rating has been recorded.")
+                else:st.warning("Could not save feedback.")
+
+st.markdown('<div class="foot">Built with LangGraph · AWS Bedrock · ChromaDB · Streamlit<br>Multi-Agent RAG System · Travel Itinerary Planner · POC</div>',unsafe_allow_html=True)
